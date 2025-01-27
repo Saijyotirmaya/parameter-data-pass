@@ -1,0 +1,60 @@
+<mvc:View controllerName="com.kt.sap.project6.controller.View1"
+    xmlns="sap.ui.table"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:core="sap.ui.core"
+    xmlns:m="sap.m"
+    height="100%">
+    <m:Page id="idTablePage" 
+        title="{i18n>title}" 
+        showHeader="false">
+			<Table id="idTable"
+				rows="{Dmodel>/Studentdata}"
+				selectionMode="MultiToggle"
+				ariaLabelledBy="title"	
+				alternateRowColors="true"
+				enableSelectAll="true">
+				<extension>
+					<m:OverflowToolbar style="Clear">
+						<m:Title id="idTitle" class="tableTitle" text="Student Details"/>
+						<m:ToolbarSpacer/>
+						<m:Button text="Admin"
+							press="onAdminpress"
+							type="Default"
+							icon="sap-icon://navigation-right-arrow"/>
+						<m:Button text="User"
+							press="onUserpress"
+							type="Default"
+							icon="sap-icon://navigation-right-arrow"/>
+					</m:OverflowToolbar>
+				</extension>
+				  <columns>
+					<Column>
+						<m:Label text="ID" />
+						<template> 
+							<m:Text text="{Dmodel>ID}" wrapping="false" />
+						</template>
+					</Column>
+					<Column>
+						<m:Label text="Name" />
+						<template>
+							<m:Text text="{Dmodel>Name}"/>
+						</template>
+					</Column>
+					<Column>
+						<m:Label text="Age" />
+						<template>
+							<m:Text text="{Dmodel>Age}" />
+						</template>
+					</Column>
+					<Column>
+						<m:Label text="City" />
+						<template>
+							<m:Text text="{Dmodel>city}" />
+						</template>
+					</Column>
+					
+					
+				</columns>
+			</Table>
+	</m:Page>
+</mvc:View>
