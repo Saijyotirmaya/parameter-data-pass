@@ -1,0 +1,59 @@
+<mvc:View controllerName="com.kt.sap.project6.controller.View2"
+    xmlns="sap.ui.table"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:core="sap.ui.core"
+    xmlns:m="sap.m"
+    height="100%">
+    <m:Page id="idTablePage2" 
+        title="{i18n>title}" 
+        showHeader="{}">
+			<Table id="idviewTable"
+				rows="{Dmodel>/filteredData}"
+				selectionMode="MultiToggle"
+				ariaLabelledBy="title"	
+				alternateRowColors="true"
+				enableSelectAll="true">
+				<extension>
+					<m:OverflowToolbar style="Clear">
+						<m:Title id="idTitle1" class="tableTitle" text="Student Details"/>
+						<m:ToolbarSpacer/>
+						<m:Button  text="{= ${Dmodel>/EditMode} ? 'Save' : 'Edit' }" 
+                          press=".onEditSaveButtonPress"
+						
+							enabled="{Dmodel>/isAdmin}"/>
+					
+						
+					</m:OverflowToolbar>
+				</extension>
+
+				<columns>
+					<Column>
+						<m:Label text="ID" />
+						<template>
+							<m:Input value="{Dmodel>ID}"  editable="{Dmodel>editable}" id="idinput1"/>
+						</template>
+					</Column>
+					<Column>
+						<m:Label text="Name" />
+						<template>
+							<m:Input value="{Dmodel>Name}" editable="{Dmodel>editable}" id="idinput2"/>
+						</template>
+					</Column>
+					<Column>
+						<m:Label text="Age" />
+						<template>
+							<m:Input value="{Dmodel>Age}"  editable="{Dmodel>editable}" id="idinput3" />
+						</template>
+					</Column>
+					<Column>
+						<m:Label text="City" />
+						<template>
+							<m:Input value="{Dmodel>city}" editable="{Dmodel>editable}" id="idinput4" />
+						</template>
+					</Column>
+					
+					
+				</columns>
+			</Table>
+	</m:Page>
+</mvc:View>
