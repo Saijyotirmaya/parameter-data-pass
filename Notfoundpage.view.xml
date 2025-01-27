@@ -1,0 +1,15 @@
+<mvc:View
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m"
+    displayBlock="true"
+	height="100%" controller="com.kt.sap.project6.controller.Notfound">
+    <Page id="idNotFound" showNavButton="true" navButtonPress="onGohomepress">
+	<content>
+				<IllustratedMessage title="Page Not Found">
+					<additionalContent>
+						<Button text="Goto Home Page" press=""/>
+					</additionalContent>
+				</IllustratedMessage>
+    </content>        
+   </Page>
+</mvc:View>
